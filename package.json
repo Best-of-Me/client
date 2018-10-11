@@ -25,5 +25,6 @@
   ],
   "devDependencies": {
     "gh-pages": "^2.0.1"
-  }
+  },
+  "homepage": "https://best-of-me.github.io/client/"
 }
