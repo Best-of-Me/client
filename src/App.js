@@ -1,25 +1,39 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
-import Home from "./components/Home";
-import SpeedHelp from "./components/SpeedHelp";
-import Diary from "./components/Diary";
-import Shop from "./components/Shop";
-import NavBar from "./components/NavBar";
-import Header from "./components/Header";
+import Auth from './components/Auth';
+import Page from './components/Page';
+import AuthService from './components/auth/AuthService'
 
 class App extends Component {
+  constructor(){
+    super()
+    this.state={currentUser:null}
+    this.service= new AuthService()
+  }
+  setUser=currentUser=>{
+    this.setState({currentUser})
+  }
+  getUser=currentUser=>{
+    this.service.loggedin()
+    .then(e=>{
+      if(e.status==200){
+        this.setState({currentUser:e.data})
+      }
+  })
+  }
+  componentWillMount(){
+    this.getUser()
+  }
   render() {
-    return (
-      <div className="App">
-        <Route path="/" component={Header} />
-        <Route exact path="/" component={Home} />
-        <Route path="/speedHelp" component={SpeedHelp} />
-        <Route path="/diary" component={Diary} />
-        <Route path="/shop" component={Shop} />
-        <Route path="/" component={NavBar} />
-      </div>
-    );
+    console.log(this.state)
+    return(
+      <Switch>
+        <Route path="/auth" render={()=><Auth currentUser={this.state.currentUser} setUser={this.setUser} />} />
+        <Route path="/" render={()=><Page currentUser={this.state.currentUser} />} />
+      </Switch>
+    )
+      
   }
 }
 
