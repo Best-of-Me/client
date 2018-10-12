@@ -1,12 +1,12 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import Home from "./Home";
-import SpeedHelp from "./SpeedHelp";
-import Diary from "./Diary";
-import Shop from "./Shop";
-import NavBar from "./NavBar";
-import Header from "./Header";
-import AuthService from './auth/AuthService'
+import Home from "../Home";
+import SpeedHelp from "../SpeedHelp";
+import Diary from "../Diary";
+import Shop from "../Shop";
+import NavBar from "../NavBar";
+import Header from "../Header";
+import AuthService from '../auth/AuthService'
 
 export default class Page extends React.Component {
   constructor(props) {

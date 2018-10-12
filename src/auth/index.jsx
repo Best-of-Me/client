@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Login from "./auth/Login";
-import Signup from './auth/Signup'
+import Login from "./Login";
+import Signup from './Signup'
 
 export default class Auth extends React.Component{
   constructor(props){

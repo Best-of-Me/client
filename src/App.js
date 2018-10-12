@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
-import Auth from './components/Auth';
-import Page from './components/Page';
+import Auth from './auth';
+import Page from './page';
 import AuthService from './components/auth/AuthService'
 
 class App extends Component {
@@ -17,7 +17,7 @@ class App extends Component {
   getUser=currentUser=>{
     this.service.loggedin()
     .then(e=>{
-      if(e.status==200){
+      if(e.status===200){
         this.setState({currentUser:e.data})
       }
   })

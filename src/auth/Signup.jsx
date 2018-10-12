@@ -1,5 +1,5 @@
 import React from "react";
-import Input from "../Input";
+import Input from "../components/Input";
 import authService from "./AuthService";
 import { Link,Redirect } from "react-router-dom";
 
@@ -16,7 +16,7 @@ export default class Signup extends React.Component {
   };
   signUp = e => {
     e.preventDefault();
-    let { email, password, message } = this.state;
+    let { email, password } = this.state;
     this.setState({ message: "" });
     this.service
       .signup(email, password)
