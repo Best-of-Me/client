@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
+import { NavLink, Route } from "react-router-dom";
+import SwipeableRoutes from "react-swipeable-routes";
+import Item from "../components/Item";
 
 export default class Shop extends React.Component {
   constructor() {
@@ -25,35 +27,27 @@ export default class Shop extends React.Component {
     if (this.state.loading) {
       return <div className={this.state.loading && "App-logo"}>Shop</div>;
     } else {
-      let items = this.state.items.filter(i => {
-        console.log(i.type.toLowerCase());
-        return i.type.toLowerCase() === type;
+      let items = {};
+      this.state.items.forEach(item => {
+        if (!items[item.type]) items[item.type] = [];
+        items[item.type].push(item);
       });
-
+      const renderItems = Object.values(items).map(type => {
+        return (
+          <Route
+            path={`/shop/${type[0].type.toLowerCase()}`}
+            render={() => <Item items={type} />}
+          />
+        );
+      });
       return (
         <div>
-          <ul>
-            <li>
-              <NavLink to="/shop/accessories">Accessories</NavLink>
-            </li>
-            <li>
-              <NavLink to="/shop/pets">Pets</NavLink>
-            </li>
-            <li>
-              <NavLink to="/shop/backgrounds">Backgrounds</NavLink>
-            </li>
-          </ul>
-          <ul>
-            {items.map(item => {
-              return (
-                <li>
-                  <img src={item.image} alt="" />
-                  <h2>{item.name}</h2>
-                  <p>{item.description}</p>
-                </li>
-              );
-            })}
-          </ul>
+          <NavLink to="/shop/accessories">Accessories</NavLink>
+          <NavLink to="/shop/pets">Pets</NavLink>
+          <NavLink to="/shop/backgrounds">Backgrounds</NavLink>
+          <SwipeableRoutes resistance replace enableMouseEvents>
+            {renderItems}
+          </SwipeableRoutes>
         </div>
       );
     }
