@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import data from "../../speedHelp";
+import data from "../speedHelp";
 export default class SpeedHelp extends React.Component {
   constructor(props) {
     super(props);
@@ -29,23 +29,19 @@ export default class SpeedHelp extends React.Component {
     let options = {...feelings};
     let title = "How you feeling?";
     let path="happenings"
-    let back="/"
     if (selections.feelings) {
       options = { ...happenings };
       title = "What happend?";
       path="situations"
-      back="feelings"
     }
     if (selections.happenings) {
       options = { ...situations };
       title = "Where tou are?";
       path="advises"
-      back="happenings"
     }
     if (selections.situations) {
       options = { ...advises };
       title = "Advise:";
-      back = "situations"
     }
     let renderOptions = [];
     console.log(options, this.state.selections);

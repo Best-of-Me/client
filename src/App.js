@@ -4,11 +4,12 @@ import "./App.css";
 import Auth from './auth';
 import Page from './page';
 import AuthService from './auth/AuthService'
+import logo from './logo.svg'
 
 class App extends Component {
   constructor(){
     super()
-    this.state={currentUser:null}
+    this.state={currentUser:null,loading:true}
     this.service= new AuthService()
   }
   setUser=currentUser=>{
@@ -18,7 +19,7 @@ class App extends Component {
     this.service.loggedin()
     .then(e=>{
       if(e.status===200){
-        this.setState({currentUser:e.data})
+        this.setState({currentUser:e.data,loading:false})
       }
   })
   }
@@ -27,12 +28,16 @@ class App extends Component {
   }
   render() {
     console.log(this.state)
-    return(
-      <Switch>
-        <Route path="/auth" render={()=><Auth currentUser={this.state.currentUser} setUser={this.setUser} />} />
-        <Route path="/" render={()=><Page currentUser={this.state.currentUser} />} />
-      </Switch>
-    )
+    if(this.state.loading){
+      return <img className="App-logo" alt="loading" src={logo}></img>
+    }else{
+      return(
+        <Switch>
+          <Route path="/auth" render={()=><Auth currentUser={this.state.currentUser} setUser={this.setUser} />} />
+          <Route path="/" render={()=><Page currentUser={this.state.currentUser} />} />
+        </Switch>
+      )
+    }
       
   }
 }

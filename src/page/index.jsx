@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Home from "./Home";
 import Diary from "./Diary";
 import Header from "./Header";
+import SpeedHelp from "./SpeedHelp";
 import SpeedHelp from "./SpeedHelp/";
 import Shop from "../components/Shop";
 import NavBar from "../components/NavBar";
