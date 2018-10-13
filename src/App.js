@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import Auth from './auth';
 import Page from './page';
-import AuthService from './components/auth/AuthService'
+import AuthService from './auth/AuthService'
 
 class App extends Component {
   constructor(){
