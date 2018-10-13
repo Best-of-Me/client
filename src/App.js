@@ -18,16 +18,20 @@ class App extends Component {
   getUser=currentUser=>{
     this.service.loggedin()
     .then(e=>{
+      console.log(e)
       if(e.status===200){
         this.setState({currentUser:e.data,loading:false})
+      }else{
+        this.setState({loading:false})
       }
-  })
+    })
+    .catch(e=>console.log(e))
   }
   componentWillMount(){
     this.getUser()
   }
   render() {
-    console.log(this.state)
+    console.log(this.props.history)
     if(this.state.loading){
       return <img className="App-logo" alt="loading" src={logo}></img>
     }else{
