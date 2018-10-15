@@ -5,6 +5,7 @@ import Diary from "./Diary";
 import Header from "./Header";
 import SpeedHelp from "./SpeedHelp";
 import Shop from "./Shop";
+import Task from "./Task";
 import NavBar from "../components/NavBar";
 import AuthService from '../auth/AuthService'
 
@@ -26,6 +27,7 @@ export default class Page extends React.Component {
             <Route path="/speedHelp/:id?" component={SpeedHelp} />
             <Route path="/diary/:id(\w+)?/:id2(\w+)?" component={Diary} />
             <Route path="/shop/:id(\w+)?" component={Shop} />
+            <Route path="/tasks/:id(\w+)" component={Task} />
             <Route component={() => <div>404</div>} />
           </Switch>
           <Route path="/" component={NavBar} />
