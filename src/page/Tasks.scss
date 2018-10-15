@@ -1,0 +1,12 @@
+svg{
+  width:20px;
+  transition: all 0.3s;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+details[open] {
+  & summary svg {
+    transform: rotate(90deg);
+  }
+}
