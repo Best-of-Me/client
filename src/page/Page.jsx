@@ -9,6 +9,7 @@ import Tasks from "./Tasks";
 import Task from "./Task";
 import NavBar from "../components/NavBar";
 import AuthService from '../auth/AuthService'
+import Profile from './Profile'
 
 export default class Page extends React.Component {
   constructor(props) {
@@ -30,6 +31,7 @@ export default class Page extends React.Component {
             <Route path="/shop/:id(\w+)?" component={Shop} />
             <Route path="/tasks/:id(\w+)" component={Task} />
             <Route path="/tasks" component={Tasks} />
+            <Route path="/profile" render={()=><Profile currentUser={this.state.currentUser}></Profile>} />
             <Route component={() => <div>404</div>} />
           </Switch>
           <Route path="/" component={NavBar} />
