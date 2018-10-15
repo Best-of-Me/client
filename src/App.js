@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
 import Auth from './auth';
 import Page from './page';
 import AuthService from './auth/AuthService'
@@ -18,7 +18,6 @@ class App extends Component {
   getUser=currentUser=>{
     this.service.loggedin()
     .then(e=>{
-      console.log(e)
       if(e.status===200){
         this.setState({currentUser:e.data,loading:false})
       }else{
@@ -31,18 +30,16 @@ class App extends Component {
     this.getUser()
   }
   render() {
-    console.log(this.props.history)
     if(this.state.loading){
       return <img className="App-logo" alt="loading" src={logo}></img>
     }else{
       return(
         <Switch>
-          <Route path="/auth" render={()=><Auth currentUser={this.state.currentUser} setUser={this.setUser} />} />
-          <Route path="/" render={()=><Page currentUser={this.state.currentUser} />} />
+          <Route path="/auth" render={()=><Auth className="App" currentUser={this.state.currentUser} setUser={this.setUser} />} />
+          <Route path="/" render={()=><Page className="App" currentUser={this.state.currentUser} />} />
         </Switch>
       )
     }
-      
   }
 }
 

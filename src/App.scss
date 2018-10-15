@@ -1,0 +1,52 @@
+:root {
+  --pale-lilac: #fcfcff;
+  --perrywinkle: #86a4eb;
+  --midnight-blue: #000046;
+  --pinky: #fb87a1;
+  --pale: #ffe3d1;
+  --blush: #f68383;
+  --pale-blue: #d3fcfd;
+  --white: #ffffff;
+  --very-light-blue: #edf3ff;
+  --light-periwinkle: #d7e3fd;
+  --dark-slate-blue: #22225f;
+  --light-pink: #ffdadc;
+}
+.App {
+  position:relative;
+  width: 360px;
+  height: 616px;
+  text-align: center;
+  box-shadow: inset 0 0 0 1px red;
+  margin:0 auto;
+  display:flex;
+  flex-direction: column;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
