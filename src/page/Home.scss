@@ -1,0 +1,116 @@
+
+div {
+  box-shadow: inset 0 0 0 1px black;
+}
+.home{
+  height:520px;
+  width: 100%;
+  
+
+}
+
+.background {
+  margin:0 auto;
+  position: relative;
+  
+  width: 100%;
+  height: 100%;
+  background-color:white;
+}
+.pet {
+  position:absolute;
+  top:251px;
+  left:25%;
+  background: rgb(79, 190, 241);
+  width: 50%;
+  height: 145px;
+}
+.background {
+  margin:0 auto;
+  position: relative;
+  
+  width: 100%;
+  height: 100%;
+  background-color:white;
+  .tasks {
+    li{
+      position: absolute;
+      top: 90px;
+      left: 28px;
+      
+      &:nth-child(2) {
+        top: 0;
+        left: 118px;
+      }
+      &:nth-child(3) {
+        top: 48px;
+        left: 224px;
+      }
+      
+    }
+  }
+}
+.Oval-10-Copy {
+  width: 100%;
+  height: 404px;
+  background-image: linear-gradient(to top, var(--pale), var(--blush));
+}
+.Path-2-Copy {
+  width: 360px;
+  height: 350.1px;
+  background-image: linear-gradient(
+    166deg,
+    var(--white),
+    var(--pale-blue) 24%,
+    var(--perrywinkle)
+  );
+}
+
+.Oval {
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  width: 91px;
+  height: 91px;
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.21);
+  background-color: var(--pinky);
+  border-radius: 50%;
+}
+.OvalText {
+  max-width: 51px;
+  max-height: 51px;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.07;
+  letter-spacing: normal;
+  text-align: center;
+  color: var(--white);
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  display:inline-block;
+  word-wrap: wrap;
+}
+.level{
+  position:absolute;
+  top: 4px;
+  right: 39px;
+  width: 81px;
+  height: 12px;
+}
+.progress-bar {
+  width: 81px;
+  height: 12px;
+  border-radius: 6px;
+  border: solid 1px var(--light-periwinkle);
+  background-color: #f3f6fd;
+}
+.filler {
+  background-image: linear-gradient(
+  to right,
+  var(--very-light-blue),
+  var(--light-periwinkle)
+  );
+}
