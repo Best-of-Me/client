@@ -36,7 +36,7 @@ class App extends Component {
       return(
         <Switch>
           <Route path="/auth" render={()=><Auth className="App" currentUser={this.state.currentUser} setUser={this.setUser} />} />
-          <Route path="/" render={()=><Page className="App" currentUser={this.state.currentUser} />} />
+          <Route path="/" render={()=><Page className="App" currentUser={this.state.currentUser} setUser={this.setUser}/>} />
         </Switch>
       )
     }

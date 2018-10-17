@@ -14,24 +14,23 @@ import Profile from './Profile'
 export default class Page extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { currentUser: this.props.currentUser };
     this.service = new AuthService();
     console.log(props)
   }
   render() {
-    if (this.state.currentUser) {
-      let {currentUser}=this.state
+    if (this.props.currentUser) {
+      let {currentUser}=this.props
       return (
         <div className="App">
           <Route path="/" component={Header} />
           <Switch>
-            <Route path="/" exact state={currentUser} render={()=><Home currentUser={this.state.currentUser}></Home>} />
+            <Route path="/" exact render={(props)=><Home {...props} currentUser={currentUser} setUser={this.props.setUser} ></Home>} />
             <Route path="/speedHelp/:id?" component={SpeedHelp} />
             <Route path="/diary/:id(\w+)?/:id2(\w+)?" component={Diary} />
             <Route path="/shop/:id(\w+)?" component={Shop} />
-            <Route path="/tasks/:id(\w+)" component={Task} />
-            <Route path="/tasks" component={Tasks} />
-            <Route path="/profile" render={()=><Profile currentUser={this.state.currentUser}></Profile>} />
+            <Route path="/tasks/:id(\w+)" render={(props)=><Task {...props} currentUser={currentUser} setUser={this.props.setUser}></Task>} />
+            <Route path="/tasks" render={(props)=><Tasks {...props} currentUser={currentUser} setUser={this.props.setUser}></Tasks>} />
+            <Route path="/profile" render={()=><Profile  currentUser={currentUser}></Profile>} />
             <Route component={() => <div>404</div>} />
           </Switch>
           <Route path="/" component={NavBar} />

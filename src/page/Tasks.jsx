@@ -1,16 +1,22 @@
 import React from "react";
 import axios from 'axios';
 import './Tasks.scss'
+import queryString from 'query-string'
 
 export default class Tasks extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { loading: true, tasks: null }
+    this.state = { 
+      loading: true,
+      tasks: null,
+      index:queryString.parse(props.location.search).index
+     }
     this.service = axios.create({
       baseURL: process.env.REACT_APP_API_URL,
       withCredentials: true
     });
   }
+
   componentWillMount(){
     this.service.get("/tasks")
     .then(e => {
@@ -18,6 +24,23 @@ export default class Tasks extends React.Component {
     })
     .catch(e => console.log(e.response));
   }
+
+  changeTask = (task) => {
+    const {  index } = this.state
+    const {currentUser} = this.props
+    this.service.put(`/users/${currentUser._id}/tasks/${task._id}`, { index })
+      .then(result => {
+        if(result.status===200){
+          currentUser.tasks[index]=task
+          this.props.setUser({currentUser})
+          this.props.history.go(-2)
+        }else{
+          Promise.reject(result)
+        }
+      })
+      .catch(e => console.log(e.response.data))
+  }
+
   render() {
     if (this.state.loading) {
       return <div>loading</div>;
@@ -36,10 +59,11 @@ export default class Tasks extends React.Component {
                     <p>+{task.points} points</p>
                   </summary>
                   <p>{task.description}</p>
-                  <button></button>
+                  <button onClick={()=>this.changeTask(task)}>Chose task</button>
                 </details>
               </li>
-            )})}
+            )
+          })}
         </ul>
       );
     }
