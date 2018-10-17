@@ -15,7 +15,6 @@ export default class Page extends React.Component {
   constructor(props) {
     super(props);
     this.service = new AuthService();
-    console.log(props)
   }
   render() {
     if (this.props.currentUser) {
@@ -24,7 +23,7 @@ export default class Page extends React.Component {
         <div className="App">
           <Route path="/" component={Header} />
           <Switch>
-            <Route path="/" exact render={(props)=><Home {...props} currentUser={currentUser} setUser={this.props.setUser} ></Home>} />
+            <Route path="/" exact render={({location,history})=> <Home currentUser={currentUser} location={location} history={history} setUser={this.props.setUser} ></Home>} />
             <Route path="/speedHelp/:id?" component={SpeedHelp} />
             <Route path="/diary/:id(\w+)?/:id2(\w+)?" component={Diary} />
             <Route path="/shop/:id(\w+)?" component={Shop} />

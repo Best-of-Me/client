@@ -32,7 +32,7 @@ export default class Tasks extends React.Component {
       .then(result => {
         if(result.status===200){
           currentUser.tasks[index]=task
-          this.props.setUser({currentUser})
+          this.props.setUser(currentUser)
           this.props.history.go(-2)
         }else{
           Promise.reject(result)
