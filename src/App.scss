@@ -12,8 +12,13 @@
   --dark-slate-blue: #22225f;
   --light-pink: #ffdadc;
 }
+@font-face {
+  font-family: Quicksand;
+  src: url("/fonts/Quicksand_Book.otf");
+  }
 .App {
-  position:relative;
+  font-family: Quicksand;
+  font-size:14px;
   width: 360px;
   height: 616px;
   text-align: center;
