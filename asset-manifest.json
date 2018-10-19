@@ -1,15 +1,16 @@
 {
-  "main.css": "/client/static/css/main.b88a17b6.chunk.css",
-  "main.js": "/client/static/js/main.3675d4cd.chunk.js",
-  "main.js.map": "/client/static/js/main.3675d4cd.chunk.js.map",
+  "main.css": "/client/static/css/main.9874cf7a.chunk.css",
+  "main.js": "/client/static/js/main.95634beb.chunk.js",
+  "main.js.map": "/client/static/js/main.95634beb.chunk.js.map",
   "static/js/1.986893dd.chunk.js": "/client/static/js/1.986893dd.chunk.js",
   "static/js/1.986893dd.chunk.js.map": "/client/static/js/1.986893dd.chunk.js.map",
   "runtime~main.js": "/client/static/js/runtime~main.dad60270.js",
   "runtime~main.js.map": "/client/static/js/runtime~main.dad60270.js.map",
-  "static/css/main.b88a17b6.chunk.css.map": "/client/static/css/main.b88a17b6.chunk.css.map",
-  "static/media/App.scss": "/client/static/media/Quicksand_Book.dd2da1d8.otf",
+  "static/css/main.9874cf7a.chunk.css.map": "/client/static/css/main.9874cf7a.chunk.css.map",
+  "static/media/auth.scss": "/client/static/media/loading.4834834a.png",
   "static/media/logo.svg": "/client/static/media/logo.5d5d9eef.svg",
+  "static/media/App.scss": "/client/static/media/Quicksand_Book.dd2da1d8.otf",
   "index.html": "/client/index.html",
-  "precache-manifest.17c2de81c838332247d811bc593a5bc5.js": "/client/precache-manifest.17c2de81c838332247d811bc593a5bc5.js",
+  "precache-manifest.e791a43f39b8bd1c4c9d8a4e855639a5.js": "/client/precache-manifest.e791a43f39b8bd1c4c9d8a4e855639a5.js",
   "service-worker.js": "/client/service-worker.js"
 }
