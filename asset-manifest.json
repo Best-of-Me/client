@@ -1,15 +1,15 @@
 {
-  "main.css": "/client/static/css/main.f7e31187.chunk.css",
-  "main.js": "/client/static/js/main.9f67cdec.chunk.js",
-  "main.js.map": "/client/static/js/main.9f67cdec.chunk.js.map",
+  "main.css": "/client/static/css/main.b88a17b6.chunk.css",
+  "main.js": "/client/static/js/main.3675d4cd.chunk.js",
+  "main.js.map": "/client/static/js/main.3675d4cd.chunk.js.map",
   "static/js/1.986893dd.chunk.js": "/client/static/js/1.986893dd.chunk.js",
   "static/js/1.986893dd.chunk.js.map": "/client/static/js/1.986893dd.chunk.js.map",
   "runtime~main.js": "/client/static/js/runtime~main.dad60270.js",
   "runtime~main.js.map": "/client/static/js/runtime~main.dad60270.js.map",
-  "static/css/main.f7e31187.chunk.css.map": "/client/static/css/main.f7e31187.chunk.css.map",
+  "static/css/main.b88a17b6.chunk.css.map": "/client/static/css/main.b88a17b6.chunk.css.map",
   "static/media/App.scss": "/client/static/media/Quicksand_Book.dd2da1d8.otf",
   "static/media/logo.svg": "/client/static/media/logo.5d5d9eef.svg",
   "index.html": "/client/index.html",
-  "precache-manifest.d64fcf6b54689fba42d3aa0d455bcbb4.js": "/client/precache-manifest.d64fcf6b54689fba42d3aa0d455bcbb4.js",
+  "precache-manifest.17c2de81c838332247d811bc593a5bc5.js": "/client/precache-manifest.17c2de81c838332247d811bc593a5bc5.js",
   "service-worker.js": "/client/service-worker.js"
 }
