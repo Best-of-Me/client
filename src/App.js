@@ -34,7 +34,7 @@ class App extends Component {
   render() {
     if(this.state.loading){
       return <div className="App" >
-          <img className="loading" alt="loading" src="/img/loading.png"></img>
+          <img className="loading" alt="loading" src="static/img/loading.png"></img>
         </div>
     }else{
       return(

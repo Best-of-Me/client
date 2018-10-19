@@ -6,10 +6,10 @@ import ReactSVG from 'react-svg'
 const NavBar = () => {
   return (
     <footer>
-      <NavLink exact to="/"><ReactSVG class="icon" src="/svg/home-icon.svg" /><b>Home</b></NavLink>
-      <NavLink to="/speedHelp"><ReactSVG class="icon" src="/svg/speedHelp-icon.svg" />Speed Help</NavLink>
-      <NavLink to="/diary"><ReactSVG class="icon" src="/svg/diary-icon.svg" />Diary</NavLink>
-      <NavLink to="/shop"><ReactSVG class="icon" src="/svg/shop-icon.svg" />Shop</NavLink>
+      <NavLink exact to="/"><ReactSVG class="icon" src="/static/svg/home-icon.svg" /><b>Home</b></NavLink>
+      <NavLink to="/speedHelp"><ReactSVG class="icon" src="/static/svg/speedHelp-icon.svg" />Speed Help</NavLink>
+      <NavLink to="/diary"><ReactSVG class="icon" src="/static/svg/diary-icon.svg" />Diary</NavLink>
+      <NavLink to="/shop"><ReactSVG class="icon" src="/static/svg/shop-icon.svg" />Shop</NavLink>
     </footer>
   );
 };

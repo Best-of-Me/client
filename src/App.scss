@@ -14,7 +14,7 @@
 }
 @font-face {
   font-family: Quicksand;
-  src: url("/fonts/Quicksand_Book.otf");
+  src: url("fonts/Quicksand_Book.otf");
   }
 .App {
   position: absolute;
@@ -73,7 +73,7 @@ button{
 }
 .Tasks, .Task, .SpeedHelp, .Advises{
   
-  background-image: url("/svg/no-home-background.svg");
+  background-image: url("/static/svg/no-home-background.svg");
   background-repeat: no-repeat;
   background-size:100% 60%;
   background-position-y: 100%;
