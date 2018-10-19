@@ -10,6 +10,7 @@ import Task from "./Task";
 import NavBar from "../components/NavBar";
 import AuthService from '../auth/AuthService'
 import Profile from './Profile'
+import Advises from './Advises'
 
 export default class Page extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ export default class Page extends React.Component {
           <Route path="/" component={Header} />
           <Switch>
             <Route path="/" exact render={({location,history})=> <Home currentUser={currentUser} location={location} history={history} setUser={this.props.setUser} ></Home>} />
+            <Route path="/speedHelp/advises" component={Advises} />
             <Route path="/speedHelp/:id?" component={SpeedHelp} />
             <Route path="/diary/:id(\w+)?/:id2(\w+)?" component={Diary} />
             <Route path="/shop/:id(\w+)?" component={Shop} />
