@@ -1,7 +1,7 @@
 {
   "main.css": "/client/static/css/main.9874cf7a.chunk.css",
-  "main.js": "/client/static/js/main.d604d1e7.chunk.js",
-  "main.js.map": "/client/static/js/main.d604d1e7.chunk.js.map",
+  "main.js": "/client/static/js/main.380406f0.chunk.js",
+  "main.js.map": "/client/static/js/main.380406f0.chunk.js.map",
   "static/js/1.986893dd.chunk.js": "/client/static/js/1.986893dd.chunk.js",
   "static/js/1.986893dd.chunk.js.map": "/client/static/js/1.986893dd.chunk.js.map",
   "runtime~main.js": "/client/static/js/runtime~main.dad60270.js",
@@ -11,6 +11,6 @@
   "static/media/logo.svg": "/client/static/media/logo.5d5d9eef.svg",
   "static/media/App.scss": "/client/static/media/Quicksand_Book.dd2da1d8.otf",
   "index.html": "/client/index.html",
-  "precache-manifest.126d13060f7e261d8d5616b7f8bc2ad2.js": "/client/precache-manifest.126d13060f7e261d8d5616b7f8bc2ad2.js",
+  "precache-manifest.adc4131d870aa7a22daeb96423f21884.js": "/client/precache-manifest.adc4131d870aa7a22daeb96423f21884.js",
   "service-worker.js": "/client/service-worker.js"
 }
