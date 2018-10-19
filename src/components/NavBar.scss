@@ -2,4 +2,23 @@ footer{
   position:absolute;
   bottom:0;
   height: 48px;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 -2px 8px 0 rgba(0, 0, 0, 0.08);
+  background-color: var(--white);
+  a{
+    font-size: 12px;
+    text-decoration: none;
+    color:var(--dark-slate-blue);
+    width:25%;
+    opacity: 0.4;
+    .icon{
+      color:var(--perrywinkle)
+    }
+    &.active{
+      opacity:1;
+    }
+  }
 }

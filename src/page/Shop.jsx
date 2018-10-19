@@ -2,7 +2,8 @@ import React from "react";
 import axios from "axios";
 import { NavLink, Route } from "react-router-dom";
 import SwipeableRoutes from "react-swipeable-routes";
-import Item from "../components/Item";
+import Items from "../components/Items";
+import './Shop.scss'
 
 export default class Shop extends React.Component {
   constructor() {
@@ -11,7 +12,7 @@ export default class Shop extends React.Component {
       baseURL: process.env.REACT_APP_API_URL,
       withCredentials: true
     });
-    this.state = { page: "accessory", loading: true };
+    this.state = { page: "", loading: true };
   }
   componentWillMount() {
     this.service("/items")
@@ -33,18 +34,22 @@ export default class Shop extends React.Component {
         items[item.type].push(item);
       });
       const renderItems = Object.values(items).map(type => {
+        const path=(type[0].type.toLowerCase()=="accessories")?"":type[0].type.toLowerCase()
+        console.log(path,type[0].type.toLowerCase())
         return (
           <Route
-            path={`/shop/${type[0].type.toLowerCase()}`}
-            render={() => <Item items={type} />}
+            path={`/shop/${path}`}
+            render={() => <Items  items={type} />}
           />
         );
       });
       return (
-        <div>
-          <NavLink to="/shop/accessories">Accessories</NavLink>
-          <NavLink to="/shop/pets">Pets</NavLink>
-          <NavLink to="/shop/backgrounds">Backgrounds</NavLink>
+        <div className="Shop">
+          <div className="links">
+            <NavLink exact to="/shop/">Accessories</NavLink>
+            <NavLink to="/shop/pets">Pets</NavLink>
+            <NavLink to="/shop/backgrounds">Backgrounds</NavLink>
+          </div>
           <SwipeableRoutes resistance replace enableMouseEvents>
             {renderItems}
           </SwipeableRoutes>

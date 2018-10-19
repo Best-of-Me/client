@@ -2,6 +2,7 @@ import React from "react";
 import Input from "../components/Input";
 import authService from "./AuthService";
 import { Link,Redirect } from "react-router-dom";
+import './auth.scss'
 
 export default class Signup extends React.Component {
   constructor(props) {
@@ -40,24 +41,26 @@ export default class Signup extends React.Component {
       return <Redirect to="/auth/login" />
     }else{
       return (
-        <div>
-          <div>{this.state.message}</div>
-          <Input
-            type="email"
-            name="email"
-            placeholder="Email"
-            onChange={this.onChangeHandler}
-            value={this.state.email}
-          />
-          <Input
-            type="password"
-            name="password"
-            placeholder="*********"
-            onChange={this.onChangeHandler}
-            value={this.state.password}
-          />
-          <button onClick={e => this.signUp(e)}>Signup</button>
-          <Link to="/auth/login">Log in</Link>
+        <div className="auth">
+          <div>
+            <div className="message">{this.state.message}</div>
+            <Input
+              type="email"
+              name="email"
+              placeholder="Email"
+              onChange={this.onChangeHandler}
+              value={this.state.email}
+              />
+            <Input
+              type="password"
+              name="password"
+              placeholder="*********"
+              onChange={this.onChangeHandler}
+              value={this.state.password}
+              />
+            <button onClick={e => this.signUp(e)}>Signup</button>
+            <Link to="/auth/login">Log in</Link>
+          </div>
         </div>
       )
     }

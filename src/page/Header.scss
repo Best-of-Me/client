@@ -1,3 +1,20 @@
 header{
-  height:40px;
+  position:relative;
+  height:48px;
+  font-size: 12px;
+  vertical-align: middle;
+  a{
+    position:absolute;
+    top:30%;
+    left:5%;
+  }
+  h1{
+    position:absolute;
+    font-size: 24px;
+    margin:0;
+    padding:0;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+  }
 }

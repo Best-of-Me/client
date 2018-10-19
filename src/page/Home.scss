@@ -1,6 +1,6 @@
 
 div {
-  box-shadow: inset 0 0 0 1px black;
+  abox-shadow: inset 0 0 0 1px black;
 }
 .home{
   height:520px;
@@ -17,13 +17,77 @@ div {
   height: 100%;
   background-color:white;
 }
+@keyframes boing {
+  0%, 20%, 53%, 80%, 100% {
+    animation-timing-function: cubic-bezier(.215,.61,.355,1);
+    transform: translateZ(0);
+  }
+  40%, 43% {
+    animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+    transform: translate3d(0,-75px,0);
+  }
+  70% {
+    animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+    transform: translate3d(0,-35px,0);
+  }
+  90% {
+    transform: translate3d(0,-4px,0);
+  }
+}
+@keyframes yupi {
+  from {
+    transform: translate(0,0) rotate(0deg);
+  
+  }
+  25%{
+    transform: translate(0,-175px)rotate(135deg);
+  }
+  50%{
+    transform: translate(0,0px) rotate(215deg);
+  }
+  75%{
+    transform: translate(0,0) rotate(360deg) ;
+  }
+  to {
+    transform: translate(0,0px) ;
+  }
+}
+@keyframes boom {
+  from {
+    transform: scale(1,1);
+    opacity :1;
+  }
+  to {
+    transform: scale(2,2) ;
+    opacity:0
+  }
+}
 .pet {
   position:absolute;
-  top:251px;
-  left:25%;
-  background: rgb(79, 190, 241);
-  width: 50%;
-  height: 145px;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  &.yupi .body {
+    transform-origin: center center;
+    animation: yupi alternate 1s linear;
+  }
+  &.boing .body {
+    transform-origin: center bottom;
+    animation: boing alternate 1s cubic-bezier(.215,.61,.355,1);
+  }
+  div > svg{
+    width:100%;
+    height: 100%;
+  }
+  .accessory{
+    position:absolute;
+    top:20%;
+    left:23%;
+    div > svg{
+      width: 90%;
+    }
+  }
 }
 .background {
   margin:0 auto;
@@ -32,11 +96,18 @@ div {
   width: 100%;
   height: 100%;
   background-color:white;
+  background-repeat: no-repeat;
+  background-position-y: 78%;
   .tasks {
+    a{
+      text-decoration: none;
+    }
     li{
+      list-style: none;
       position: absolute;
       top: 90px;
       left: 28px;
+      color:var(--white);
       
       &:nth-child(2) {
         top: 0;
@@ -75,11 +146,15 @@ div {
   box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.21);
   background-color: var(--pinky);
   border-radius: 50%;
+  &.boom{
+    transform-origin: center center;
+    animation: boom .5s linear forwards;
+  }
 }
 .OvalText {
   max-width: 51px;
   max-height: 51px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;

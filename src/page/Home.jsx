@@ -4,12 +4,16 @@ import "./Home.scss";
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import queryString from 'query-string'
+import ReactSVG from 'react-svg'
 
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true
+      loading: true,
+      yupi:"",
+      boom:"",
+      index:null
     };
     this.service = axios.create({
       baseURL: process.env.REACT_APP_API_URL,
@@ -30,18 +34,24 @@ export default class Home extends React.Component {
     })
     .then(responses => {
       currentUser.tasks=responses.data.tasks.map(response=>response.data)
-      this.setState({ currentUser, loading: false });
+      this.setState({ loading: false });
+      this.props.setUser(currentUser)
     })
     .catch(e => console.log(e.response));
   }
 
   completeTask = (index) =>{
+    this.setState({index,yupi:"yupi",boom:"boom"})
+    console.log(index)
     const {currentUser} = this.props
     this.service.put(`/users/${currentUser._id}/tasks/random`, { index })
     .then(result => {
       if(result.status===200){
         this.props.history.replace("/")
-        this.props.setUser(result.data)
+        setTimeout(()=>{
+          this.props.setUser(result.data)
+          this.setState({index,yupi:"",boom:""})
+      },1000)
       }else{
         return Promise.reject(result)
       }
@@ -53,11 +63,13 @@ export default class Home extends React.Component {
     if(this.props.currentUser.tasks.length===0){
       this.initTasks()
     }
-      
+  }
+  componentWillMount(){
+    const index = queryString.parse(this.props.location.search).index
+      if(index!==undefined && this.state.index===null) this.completeTask(index)
   }
   render() {
-    const index = queryString.parse(this.props.location.search).index
-    if(index!==undefined) this.completeTask(index)
+    const {yupi,boom,index}=this.state
     let {
       level,
       experience,
@@ -66,6 +78,7 @@ export default class Home extends React.Component {
       accessory,
       experienceNextLevel
     } = this.props.currentUser;
+    background=(background)?background:"/svg/blue-background.svg"
     const {tasks} = this.props.currentUser
     experience = 75;
     experienceNextLevel = 100;
@@ -74,22 +87,19 @@ export default class Home extends React.Component {
         100 || 0;
     return (
       <div className="home">
-        <div className="background">
+        <div className="background" style={{backgroundImage: `url(${background})`}}>
           <div className="level">
             <ProgressBar percentage={percentage} />
             <div>Level {level}</div>
           </div>
-          {background || "default"} background
-          <div className="pet">
-          {pet || "BoM"}
-          <div>{accessory || "with out"}</div>
-          </div>
+          <ReactSVG className={`pet ${(yupi==="")?"boing":yupi}`} src={pet || "/svg/bom.svg"}  />
+          {accessory||<ReactSVG className="accessory" src={accessory||"/svg/gafas.svg"}></ReactSVG>}
           <ul className="tasks">
             {tasks.map((task,taskIndex)=>{
               if(!task) return <li key={taskIndex}><div className="Oval"> </div></li>
               return (
                 <li key={taskIndex}>
-                  <Link to={`/tasks/${task._id}?index=${taskIndex}`} className="Oval">
+                  <Link to={`/tasks/${task._id}?index=${taskIndex}`} className={`Oval ${(index==taskIndex)?boom:""}`}>
                   <p className="OvalText">{task.name}</p>
                   </Link>
                 </li>

@@ -1,0 +1,23 @@
+.Shop{
+  display:flex;
+  flex-direction: column;
+  height: calc(100% - 96px);
+  padding:0 10px;
+  .links{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    a{
+      text-decoration: none;
+      color: var(--midnight-blue);
+      padding:5px;
+      opacity: 0.5;
+      flex:1;
+      &.active{
+        opacity: 1;
+        border-bottom: 2px solid var(--perrywinkle);
+      }
+    }
+  }
+}

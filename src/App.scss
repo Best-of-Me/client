@@ -17,17 +17,33 @@
   src: url("/fonts/Quicksand_Book.otf");
   }
 .App {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   font-family: Quicksand;
   font-size:14px;
   width: 360px;
   height: 616px;
   text-align: center;
-  box-shadow: inset 0 0 0 1px red;
+  background-color: var(--pale-lilac);
+  box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.08);
   margin:0 auto;
   display:flex;
   flex-direction: column;
+  .loading{
+    height: 100%;
+  }
 }
-
+button{
+  display: inline-block;
+  font-family: Quicksand;
+  padding:7px 14px;
+  align-self: center;
+  border-radius: 24px;
+  border:none;
+  background-image: linear-gradient(to right, var(--pale), var(--light-pink));
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
 }
@@ -54,4 +70,33 @@
   to {
     transform: rotate(360deg);
   }
+}
+.Tasks, .Task, .SpeedHelp, .Advises{
+  
+  background-image: url("/svg/no-home-background.svg");
+  background-repeat: no-repeat;
+  background-size:100% 60%;
+  background-position-y: 100%;
+}
+::-webkit-scrollbar {
+  width: 3px;
+  background-color: rgba(255, 255, 255, 0);
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--perrywinkle);
+}
+::-webkit-scrollbar-thumb:hover {
+  width: 10px;
+  background: var(--perrywinkle);
+  border:0;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(left, #22ADD4, #1E98BA);
 }

@@ -2,67 +2,67 @@ const speedHelp = {
   feelings: {
     ansiedad: {
       text: "Anxiety",
-      image: ""
+      image: "/svg/anxiety.svg"
     },
     angustia: {
       text: "Anguish",
-      image: ""
+      image: "/svg/anguish.svg"
     },
     ira: {
       text: "Wrath",
-      image: ""
+      image: "/svg/wrath.svg"
     },
     tristeza: {
       text: "Sadness",
-      image: ""
+      image: "/svg/sadness.svg"
     },
     nose: {
       text: "I do not have it clear",
-      image: ""
+      image: "/svg/notClear.svg"
     }
   },
   situations: {
     trabajo: {
       text: "Work",
-      image: ""
+      image: "/svg/work.svg"
     },
     paseo: {
       text: "Taking a walk",
-      image: ""
+      image: "/svg/walking.svg"
     },
     fiesta: {
       text: "Partying",
-      image: ""
+      image: "/svg/party.svg"
     },
     estudio: {
       text: "studying",
-      image: ""
+      image: "/svg/study.svg"
     },
     casa: {
       text: "At home",
-      image: ""
+      image: "/svg/home.svg"
     },
     amigos: {
       text: "With friends",
-      image: ""
+      image: "/svg/friends.svg"
     }
   },
   happenings: {
     rechazo: {
       text: "Rejection",
-      image: ""
+      image: "/svg/rejection.svg"
     },
     acoso: {
       text: "Bullying",
-      image: ""
+      image: "/svg/bullying.svg"
     },
     discusion: {
       text: "Discussion",
-      image: ""
+      image: "/svg/discussion.svg"
     },
     ruptura: {
       text: "Breaking off",
-      image: ""
+      image: "/svg/break.svg"
     },
     nada: {
       text: "Nothing Special",
@@ -70,11 +70,13 @@ const speedHelp = {
     }
   },
   advises: {
-    advise1: { title: "Sugerencia 1", text: "texto de la sugerencia1" },
-    advise2: { title: "Sugerencia 2", text: "texto de la sugerencia2" },
-    advise3: { title: "Sugerencia 3", text: "texto de la sugerencia3" },
-    advise4: { title: "Sugerencia 4", text: "texto de la sugerencia4" },
-    advise5: { title: "Sugerencia 5", text: "texto de la sugerencia5" }
+    advise1: { 
+      text: "It is normal to discuss with co-workers, especially when there are stress situations involved.",
+      text2:"Try to breathe deeply and relax, think objectively and find a way to solve problems one by one.",
+      suggestion:[
+        {image:"/svg/bom-icon.svg",text:"Relax playing with BoM for a while"},
+        {image:"/svg/info.svg",text:"Keep reading other tips"}]
+    }
   }
 };
 module.exports = speedHelp;

@@ -20,10 +20,6 @@ export default class Task extends React.Component {
     });
   }
 
-  completeTask = () =>{
-    const {task,index} = this.state
-    this.setState({taskToChange:{task,index}})
-  }
   componentWillMount(){
     const {pathname}=this.props.location
     this.service.get(pathname)
@@ -45,13 +41,14 @@ export default class Task extends React.Component {
         return <div>Task not found</div>
       }else{
         return (
-          <div className="Tasks">
-            <h2>{task.name}</h2>
-            <p>+{task.points} points</p>
-            <p>{task.description}</p>
-            <button onClick={this.completeTask}>Complete</button>
-            <Link to={`/?index=${index}`}>Complete</Link>
-            <Link to={`/tasks?index=${index}`}>change</Link>
+          <div className="Task">
+            <div className="task">
+              <h2>{task.name}</h2>
+              <p>+{task.points} points</p>
+              <p>{task.description}</p>
+              <Link to={`/?index=${index}`}><b>Complete!</b></Link>
+              <Link to={`/tasks?index=${index}`}>Change</Link>
+            </div>
           </div>
         );
       }

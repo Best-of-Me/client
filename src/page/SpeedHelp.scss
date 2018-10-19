@@ -1,0 +1,19 @@
+.SpeedHelp{
+  height: 100%;
+  h2{
+    font-size: 18px;
+  }
+  ul{
+    padding:40px;
+    display :flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    li{
+      list-style: none;
+      width: 50%;
+      img{
+        opacity: .7;
+      }
+    }
+  }
+}

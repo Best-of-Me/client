@@ -15,14 +15,16 @@ class App extends Component {
   setUser=currentUser=>{
     this.setState({currentUser})
   }
-  getUser=currentUser=>{
+  getUser=(currentUser)=>{
     this.service.loggedin()
     .then(e=>{
-      if(e.status===200){
+      setTimeout(()=>{
+        if(e.status===200){
         this.setState({currentUser:e.data,loading:false})
-      }else{
-        this.setState({loading:false})
-      }
+        }else{
+         this.setState({loading:false})
+        }
+      },1000)
     })
     .catch(e=>console.log(e))
   }
@@ -31,7 +33,9 @@ class App extends Component {
   }
   render() {
     if(this.state.loading){
-      return <img className="App-logo" alt="loading" src={logo}></img>
+      return <div className="App" >
+          <img className="loading" alt="loading" src="/img/loading.png"></img>
+        </div>
     }else{
       return(
         <Switch>
