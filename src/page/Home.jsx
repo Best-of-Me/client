@@ -78,7 +78,7 @@ export default class Home extends React.Component {
       accessory,
       experienceNextLevel
     } = this.props.currentUser;
-    background=(background)?background:"/static/svg/blue-background.svg"
+    background=(background)?background:process.env.REACT_APP_BASENAME+"/static/svg/blue-background.svg"
     const {tasks} = this.props.currentUser
     experience = 75;
     experienceNextLevel = 100;
@@ -88,12 +88,12 @@ export default class Home extends React.Component {
     return (
       <div className="home">
         <div className="background" style={{backgroundImage: `url(${background})`}}>
+          <ReactSVG className={`pet ${(yupi==="")?"boing":yupi}`} src={pet || process.env.REACT_APP_BASENAME+"/static/svg/bom.svg"}  />
           <div className="level">
             <ProgressBar percentage={percentage} />
             <div>Level {level}</div>
           </div>
-          <ReactSVG className={`pet ${(yupi==="")?"boing":yupi}`} src={pet || "/static/svg/bom.svg"}  />
-          {accessory||<ReactSVG className="accessory" src={accessory||"/static/svg/gafas.svg"}></ReactSVG>}
+          {accessory||<ReactSVG className="accessory" src={accessory||process.env.REACT_APP_BASENAME+"/static/svg/gafas.svg"}></ReactSVG>}
           <ul className="tasks">
             {tasks.map((task,taskIndex)=>{
               if(!task) return <li key={taskIndex}><div className="Oval"> </div></li>

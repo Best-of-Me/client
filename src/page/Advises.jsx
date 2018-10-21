@@ -12,11 +12,11 @@ const Advises = () => {
     Suggestion:
     <div>
       <div>
-        <img src={advise.suggestion[0].image} alt={advise.suggestion[0].image}/>
+        <img src={process.env.REACT_APP_BASENAME+advise.suggestion[0].image} alt={advise.suggestion[0].image}/>
         <p>{advise.suggestion[0].text}</p>
       </div>
       <div>
-        <img src={advise.suggestion[1].image} alt={advise.suggestion[1].image}/>
+        <img src={process.env.REACT_APP_BASENAME+advise.suggestion[1].image} alt={advise.suggestion[1].image}/>
         <p>{advise.suggestion[1].text}</p>
       </div>
     </div>

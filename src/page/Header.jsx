@@ -13,7 +13,7 @@ const Header = (props) => {
   console.log(pathname)
   return <header>
       <Link to={pathname==="/"?"/profile":"/"}>
-      <ReactSVG class="icon" src={pathname==="/"?"/static/svg/profile-icon.svg":"/static/svg/back-icon.svg"}/>
+      <ReactSVG class="icon" src={pathname==="/"?process.env.REACT_APP_BASENAME+"/static/svg/profile-icon.svg":process.env.REACT_APP_BASENAME+"/static/svg/back-icon.svg"}/>
       </Link>
       <h1>{pathname==="/"?"BoM":parsePathname(pathname)}</h1>
     </header>;

@@ -62,7 +62,7 @@ export default class SpeedHelp extends React.Component {
           {renderOptions.map(o => {
             return (
               <li key={o.text} onClick={() => this.setSelection(o.option,option,path)} >
-                {(o.image!=="")?<img src={o.image} alt={o.text} />:""}
+                {(o.image!=="")?<img src={process.env.REACT_APP_BASENAME+o.image} alt={o.text} />:""}
                 <p>{o.text}</p>
               </li>
             );

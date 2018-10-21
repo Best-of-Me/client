@@ -9,7 +9,7 @@ export default class Item extends React.Component{
           return (
               <div className="item" key={item.name}>
                 <div className="left">
-                  <img src={item.image} alt={item.name}/>
+                  <img src={process.env.REACT_APP_BASENAME+item.image} alt={item.name}/>
                 </div>
                 <div className="right">
                   <h3>{item.name}</h3>
