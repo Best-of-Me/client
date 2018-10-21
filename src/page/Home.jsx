@@ -44,7 +44,14 @@ export default class Home extends React.Component {
     this.setState({index,yupi:"yupi",boom:"boom"})
     console.log(index)
     const {currentUser} = this.props
-    this.service.put(`/users/${currentUser._id}/tasks/random`, { index })
+    this.service.post(`/users/${currentUser._id}/tasks/${currentUser.tasks[index]._id}`,{points:currentUser.tasks[index].points})
+    .then(res=>{
+      if(res.status===200){
+        return this.service.put(`/users/${currentUser._id}/tasks/random`, { index })
+      }else{
+        return Promise.reject(res)
+      }
+    })
     .then(result => {
       if(result.status===200){
         this.props.history.replace("/")
