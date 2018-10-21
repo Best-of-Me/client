@@ -4,7 +4,7 @@ import './ProgressBar.scss'
 export default class ProgressBar extends React.Component{
   render(){
     return(
-      <div className="progress-bar">
+      <div className="progress-bar" title={this.props.title}>
         <div className="filler" style={{width:`${this.props.percentage}%`}}></div>
       </div>
     )

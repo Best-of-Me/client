@@ -42,7 +42,6 @@ export default class Home extends React.Component {
 
   completeTask = (index) =>{
     this.setState({index,yupi:"yupi",boom:"boom"})
-    console.log(index)
     const {currentUser} = this.props
     this.service.post(`/users/${currentUser._id}/tasks/${currentUser.tasks[index]._id}`,{points:currentUser.tasks[index].points})
     .then(res=>{
@@ -87,17 +86,14 @@ export default class Home extends React.Component {
     } = this.props.currentUser;
     background=(background)?background:process.env.REACT_APP_BASENAME+"/static/svg/blue-background.svg"
     const {tasks} = this.props.currentUser
-    experience = 75;
-    experienceNextLevel = 100;
-    let percentage =
-      ((experience - experienceNextLevel / 2) / (experienceNextLevel / 2)) *
-        100 || 0;
+    let percentage = (experienceNextLevel === 100) ? experience :
+      ((experience - experienceNextLevel / 2) / (experienceNextLevel / 2)) * 100;
     return (
       <div className="home">
         <div className="background" style={{backgroundImage: `url(${background})`}}>
           <ReactSVG className={`pet ${(yupi==="")?"boing":yupi}`} src={pet || process.env.REACT_APP_BASENAME+"/static/svg/bom.svg"}  />
           <div className="level">
-            <ProgressBar percentage={percentage} />
+            <ProgressBar percentage={percentage} title={`Points: ${experience} \nNext Level: ${experienceNextLevel}`} />
             <div>Level {level}</div>
           </div>
           {accessory||<ReactSVG className="accessory" src={accessory||process.env.REACT_APP_BASENAME+"/static/svg/gafas.svg"}></ReactSVG>}
@@ -107,7 +103,7 @@ export default class Home extends React.Component {
               return (
                 <li key={taskIndex}>
                   <Link to={`/tasks/${task._id}?index=${taskIndex}`} className={`Oval ${(index==taskIndex)?boom:""}`}>
-                  <p className="OvalText">{task.name}</p>
+                  <p className="OvalText">{`${task.name} +${task.points}`}</p>
                   </Link>
                 </li>
               )
