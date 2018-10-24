@@ -1,16 +1,16 @@
 {
-  "main.css": "/client/static/css/main.9874cf7a.chunk.css",
-  "main.js": "/client/static/js/main.07becaab.chunk.js",
-  "main.js.map": "/client/static/js/main.07becaab.chunk.js.map",
-  "static/js/1.986893dd.chunk.js": "/client/static/js/1.986893dd.chunk.js",
-  "static/js/1.986893dd.chunk.js.map": "/client/static/js/1.986893dd.chunk.js.map",
+  "main.css": "/client/static/css/main.fba9dc72.chunk.css",
+  "main.js": "/client/static/js/main.9696d0d1.chunk.js",
+  "main.js.map": "/client/static/js/main.9696d0d1.chunk.js.map",
+  "static/js/1.ca535557.chunk.js": "/client/static/js/1.ca535557.chunk.js",
+  "static/js/1.ca535557.chunk.js.map": "/client/static/js/1.ca535557.chunk.js.map",
   "runtime~main.js": "/client/static/js/runtime~main.dad60270.js",
   "runtime~main.js.map": "/client/static/js/runtime~main.dad60270.js.map",
-  "static/css/main.9874cf7a.chunk.css.map": "/client/static/css/main.9874cf7a.chunk.css.map",
+  "static/css/main.fba9dc72.chunk.css.map": "/client/static/css/main.fba9dc72.chunk.css.map",
   "static/media/auth.scss": "/client/static/media/loading.4834834a.png",
   "static/media/logo.svg": "/client/static/media/logo.5d5d9eef.svg",
   "static/media/App.scss": "/client/static/media/Quicksand_Book.dd2da1d8.otf",
   "index.html": "/client/index.html",
-  "precache-manifest.ea3867e2025789e7934090944a839023.js": "/client/precache-manifest.ea3867e2025789e7934090944a839023.js",
+  "precache-manifest.e622b9dfd88b3d1cab0a8887cb5178dd.js": "/client/precache-manifest.e622b9dfd88b3d1cab0a8887cb5178dd.js",
   "service-worker.js": "/client/service-worker.js"
 }
