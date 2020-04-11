@@ -27,7 +27,7 @@ export default class Page extends React.Component {
             <Route path="/" exact render={({location,history})=> <Home currentUser={currentUser} location={location} history={history} setUser={this.props.setUser} ></Home>} />
             <Route path="/speedHelp/advises" component={Advises} />
             <Route path="/speedHelp/:id?" component={SpeedHelp} />
-            <Route path="/diary/:id(\w+)?/:id2(\w+)?" component={Diary} />
+            <Route path="/diary/:id(\w+)?/:id2(\w+)?" render={()=><Diary currentUser={currentUser}/>} />
             <Route path="/shop/:id(\w+)?" component={Shop} />
             <Route path="/tasks/:id(\w+)" render={(props)=><Task {...props} currentUser={currentUser} setUser={this.props.setUser}></Task>} />
             <Route path="/tasks" render={(props)=><Tasks {...props} currentUser={currentUser} setUser={this.props.setUser}></Tasks>} />

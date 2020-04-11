@@ -3,7 +3,7 @@ const Profile = (props) => {
   const user=props.currentUser
   return (
   <div>
-    <img src={user.image} alt={user.username}/>
+    {/* <img src={user.image} alt={user.username}/> */}
     <p>{user.username}</p>
   </div>
   );
